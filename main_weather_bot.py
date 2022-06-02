@@ -1,9 +1,8 @@
-from config import open_weather_token, tg_token
 import requests
 import datetime
 import logging
 from aiogram import Bot, Dispatcher, executor, types
-
+from config import open_weather_token, tg_token
 
 bot  = Bot(token = tg_token)
 dp = Dispatcher(bot)
@@ -13,7 +12,7 @@ async def send_welcome(message: types.Message):
     """
     This handler will be called when user sends `/start` or `/help` command
     """
-    await message.reply("Hi!\nI'm EchoBot!\nPowered by aiogram.")
+    await message.reply("Привет напиши название города и я отправлю сводку по погоде!")
 
 @dp.message_handler()
 async def send_welcome(message: types.Message):
